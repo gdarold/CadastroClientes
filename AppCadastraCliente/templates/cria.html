@@ -1,0 +1,60 @@
+<!-- Extender do template base -->
+{% extends "base.html" %}
+
+<!-- Bloco que define o title da página -->
+{% block title %}Sistema Gerenciador de Clientes{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+
+{% block conteudo %}
+	<h3>Cadastro de Clientes</h3>
+	<p>Complete o formulário abaixo para cadastrar um Cliente</p>
+	
+	<form method="post">
+	<!-- Não esqueça deste comando -->
+	{% csrf_token %}
+	<br>
+	<label>Nome:</label>
+	{{form.nome}}
+	<br>
+	<label>Sobrenome:</label>
+	{{form.sobrenome}}
+	<br>
+	<label>cpf:</label>
+	{{form.cpf}}
+	<br>
+	<label>email:</label>
+	{{form.email}}
+	<br>
+	
+	<label>Telefone:</label>
+	{{form.telefone}}
+	<br>
+	<label>endereço:</label>
+	{{form.endereco}}
+	<br>
+	<label>Cidade:</label>
+	{{form.cidade}}
+	<br>
+	<label>Estado:</label>
+	{{form.estado}}
+	<br>
+	<label>Valor:</label>
+	{{form.valor}}
+	<br>
+	
+	
+	
+	
+	
+	<button type="submit">Cadastrar</button>
+	
+	
+	
+	
+	
+	</form>
+	<p><a href="{% url 'index' %}">Cancelar</a></p>
+	
+	
+{% endblock %}

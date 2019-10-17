@@ -1,0 +1,26 @@
+<!-- Extender do template base -->
+{% extends "base.html" %}
+
+<!-- Bloco que define o title da página -->
+{% block title %}Sistema Gerenciador de Clientes{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+
+{% block conteudo %}
+	<div class="container">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h3>Cadastrar Clientes</h3>
+				<p>Cadastre aqui um novo Cliente</p>
+			    <p><a href="{% url 'cadastra_clientes'%}">Novo Cliente</a></p>
+			</div>
+		</div>
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h3>Listar Clientes</h3>
+				<p>Veja aqui a lista de clientes cadastrados.</p>
+			    <p><a href="{% url 'lista_clientes' %}">Lista de Clientes</a></p>
+		    </div>
+	    </div>
+    </div>
+{% endblock %}

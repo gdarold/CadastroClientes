@@ -1,0 +1,28 @@
+<!-- Extender do template base -->
+{% extends "base.html" %}
+
+<!-- Bloco que define o title da página -->
+{% block title %}Exclusão clientes{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+
+{% block conteudo %}
+	<h3>Exclusão de Clientes</h3>
+	
+	<p>Você tem certeza que quer excluir o cliente
+	<b>{{ cliente.nome }} {{ cliente.sobrenome }}</b>? </p>
+	
+	<button type="button"><a href="{% url 'lista_clientes' %}"> Cancelar</a></button>
+	
+	<form method="post">
+		<!-- Não esqueça deste comando -->
+		
+		<br>
+		{% csrf_token %} 
+		
+		<button>Excluir</button>
+	</form>
+
+
+
+{% endblock %}

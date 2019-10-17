@@ -1,0 +1,49 @@
+<!-- Extender do template base -->
+{% extends "base.html" %}
+
+<!-- Bloco que define o title da página -->
+{% block title %}Lista de clientes{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+
+{% block conteudo %}
+	<h3>Listar Clientes</h3>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Nome</th> 
+				<th>Sobrenome</th> 
+				<th>CPF</th> 
+				<th>Email</th> 
+				<th>telefone</th>
+				<th>endereco</th>
+				<th>cidade</th>
+				<th>estado</th>
+				<th>valor</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			{% for clientes in cliente %}	
+				<tr>
+					<td>{{ clientes.nome }}</td> 
+					<td>{{ clientes.sobrenome }}</td> 
+					<td>{{ clientes.cpf }}</td>
+					<td>{{ clientes.email }}</td>
+					<td>{{ clientes.telefone }}</td>
+					<td>{{ clientes.endereco }}</td>
+					<td>{{ clientes.cidade }}</td>
+					<td>{{ clientes.estado }}</td>
+					<td>{{ clientes.valor }}</td>
+					
+					<td>
+						<a href="{% url 'atualiza_clientes' pk=clientes.id %}">Atualizar</a>
+						<a href="{% url 'deleta_clientes' pk=clientes.id %}">Excluir</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
