@@ -25,7 +25,11 @@ SECRET_KEY = '(f!)fphptys7g!d%j-8%x$s!otye4=fy+l)o&=98pjr!m0)*wq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'mapjobs.herokuapp.com'
+    
+    ]
 
 
 # Application definition
