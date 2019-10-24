@@ -3,6 +3,7 @@ from AppCadastraCliente.views import Index, ListaClientes, AtualizaClientes, \
     CriaClientes, ClientesDeleteView
 from ProjetoCadastroCliente.models import Cliente
 
+
 urlpatterns = [
     path('', Index.as_view(), name="index"),
     path('clientes/', ListaClientes.as_view(), name="lista_clientes"),
